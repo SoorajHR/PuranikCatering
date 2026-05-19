@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,14 +10,15 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
-    setTimeout(() => {
+    // Fallback in case video doesn't play
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 8000);
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-    return <Loading />;
+    return <Loading onVideoEnd={() => setLoading(false)} />;
   }
 
   return (
