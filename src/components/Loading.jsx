@@ -17,8 +17,8 @@ const Loading = ({ onVideoEnd }) => {
         </video>
       </div>
       <div className="loading-content">
-        <h2 className="loading-text">Puranik Catering</h2>
-        <p className="loading-subtext">A Tradition of Taste</p>
+        {/* <h2 className="loading-text">Puranik Catering</h2>
+        <p className="loading-subtext">A Tradition of Taste</p> */}
       </div>
     </div>
   );
