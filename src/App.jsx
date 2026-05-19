@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -22,16 +21,14 @@ function App() {
   }
 
   return (
-    <Router>
+    <>
       <Navbar />
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+        <Home />
       </main>
       <Footer />
       <FloatingWhatsApp />
-    </Router>
+    </>
   );
 }
 
